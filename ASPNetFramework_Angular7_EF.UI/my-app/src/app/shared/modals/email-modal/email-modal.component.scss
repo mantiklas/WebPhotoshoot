@@ -1,0 +1,49 @@
+app-email-modal{
+    .modal-message{
+        padding: 51pt 29pt 26pt;
+        text-align: center;
+    }
+
+    .body-message{
+        color:#8A8A8A;
+    }
+
+    .btn-confirm{
+        width: 45%;
+        background-color: #00A1C9;
+        color: #fff;
+        box-shadow: none;
+        font-family: 'Helvetica';
+        text-transform: none;
+        margin: 3pt;
+        height: 35pt;
+    }
+
+    .btn-confirm:hover {
+        background-color: #BCBCBC;
+    }
+
+    .btn-confirm:hover,
+    .btn-confirm:active,
+    .btn-confirm:focus{
+        box-shadow: none;
+        color: #fff;
+    }
+
+    .btn-confirm:disabled{
+        background-color: #BCBCBC;
+        opacity: 1;
+        color: #fff;
+        cursor: default;
+    }
+
+    .modal-footer{
+        justify-content: center;
+    }
+
+    .nav-confirm{
+        padding: 10pt 20pt;
+        text-align: center;
+        display: block;
+    }
+}
