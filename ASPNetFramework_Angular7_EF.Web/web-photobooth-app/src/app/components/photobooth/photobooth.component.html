@@ -1,0 +1,29 @@
+<div class="container">
+      <div class="row mt-5">
+        <div class="col-sm-6">
+            <webcam [height]="500" [width]="500" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
+            [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
+            [videoOptions]="videoOptions"
+            [imageQuality]="1"
+            (cameraSwitched)="cameraWasSwitched($event)"
+            (initError)="handleInitError($event)"></webcam>
+            <button
+                type="button"
+                class="btn btn-primary mt-3"
+                (click)="triggerSnapshot();"
+            >
+                Take Snapshot
+            </button>
+        </div>
+        <div class="col-sm-6">
+          <canvas id="myCanvas" class="myCanvas" height="375" width="500"></canvas>
+          <!-- <div class="snapshot" *ngIf="webcamImage">
+            <img [src]="webcamImage.imageAsDataUrl" width="500" height="375"/>
+          </div> -->
+          <button type="button" id="remove" class="btn btn-danger mt-3">Remove</button>
+          <button type="button" (click)="addSticker()" class="btn btn-primary mt-3">Add Image</button>
+          <button type="button" class="btn btn-success mt-3" (click)="download()">Download</button>
+          <button type="button" class="btn btn-success mt-3" *ngIf ="showSend" (click)="emailEntry()">Send</button>
+        </div>
+      </div>
+    </div>

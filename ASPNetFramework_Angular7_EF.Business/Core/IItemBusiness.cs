@@ -9,7 +9,5 @@ namespace ASPNetFramework_Angular7_EF.Business.Core
 {
     public interface IItemBusiness
     {
-        IEnumerable<ItemDto> GetAllItems();
-        void DeleteItem(int id);
     }
 }

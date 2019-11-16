@@ -154,10 +154,6 @@
       <Project>{F138961C-7A3E-49A1-8E06-6B63AA2B75AC}</Project>
       <Name>ASPNetFramework_Angular7_EF.Business</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ASPNetFramework_Angular7_EF.Data\ASPNetFramework_Angular7_EF.Data.csproj">
-      <Project>{8FA7E2B7-E45F-41F6-8A73-4BBA359EBD61}</Project>
-      <Name>ASPNetFramework_Angular7_EF.Data</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

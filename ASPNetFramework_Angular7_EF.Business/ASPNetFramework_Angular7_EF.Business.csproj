@@ -35,6 +35,7 @@
       <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
@@ -54,20 +55,13 @@
     <Compile Include="Businesses\ItemBusiness.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Core\IItemBusiness.cs" />
+    <Compile Include="Dtos\EmailDto.cs" />
     <Compile Include="Dtos\ItemDto.cs" />
     <Compile Include="Dtos\ToBeDeletedItem.cs" />
+    <Compile Include="Email\EmailSender.cs" />
+    <Compile Include="Email\IEmailSender.cs" />
     <Compile Include="Profile\ItemProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ASPNetFramework_Angular7_EF.Data\ASPNetFramework_Angular7_EF.Data.csproj">
-      <Project>{8FA7E2B7-E45F-41F6-8A73-4BBA359EBD61}</Project>
-      <Name>ASPNetFramework_Angular7_EF.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ASPNetFramework_Angular7_EF.Domain\ASPNetFramework_Angular7_EF.Domain.csproj">
-      <Project>{A23E1DE1-30A7-4A2A-B0E3-FA38C421854A}</Project>
-      <Name>ASPNetFramework_Angular7_EF.Domain</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

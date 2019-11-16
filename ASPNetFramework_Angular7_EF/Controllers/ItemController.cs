@@ -1,5 +1,6 @@
 ﻿using ASPNetFramework_Angular7_EF.Business.Core;
 using ASPNetFramework_Angular7_EF.Business.Dtos;
+using ASPNetFramework_Angular7_EF.Business.Email;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,38 +15,22 @@ namespace ASPNetFramework_Angular7_EF.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ItemController : ApiController
     {
-        private readonly IItemBusiness _itemBusiness;
+        private readonly IEmailSender _emailSender;
 
-        public ItemController(IItemBusiness itemBusiness )
+        public ItemController(IEmailSender emailSender)
         {
-            this._itemBusiness = itemBusiness;
-        }
-        [Route("getall")]
-        [HttpGet]
-        public IHttpActionResult GetItems()
-        {
-            try
-            {
-                var items =  this._itemBusiness.GetAllItems();
-                return Ok(items);
-            }
-
-            catch (Exception exception)
-            {
-                return Content(HttpStatusCode.BadRequest, exception);
-            }
+            this._emailSender = emailSender;
         }
 
         [HttpPost]
-        [Route("deleteitem")]
-        public IHttpActionResult DeleteItem(ToBeDeletedItem item)
+        [Route("sendemail")]
+        public IHttpActionResult SendEmail(EmailDto ed)
         {
             try
             {
-                this._itemBusiness.DeleteItem(item.Id);
+                this._emailSender.Send(ed);
                 return Ok();
             }
-
             catch (Exception exception)
             {
                 return Content(HttpStatusCode.BadRequest, exception);
